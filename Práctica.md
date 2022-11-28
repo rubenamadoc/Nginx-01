@@ -42,7 +42,7 @@ Este es el resultado despues de modificar la página por defecto:
 
 El balanceo de carga es una técnica que se utiliza para distribuir las solicitudes entrantes al grupo de servidores del backend. De esta manera, permite agregar muchos servidores cuando aumenta el tráfico.
 
-Para realizar la practica, necesaitré usar tres servidores con nginx instalado en cada uno. Uno contendrá una página web, utilizaré el ya creado en las practicas anteriores. Otro con otra página web y uno que hará de balanceo de carga. Además, los tres servidores se counicarán por una red interna.
+Para realizar la practica, necesaitré usar tres servidores con nginx instalado en cada uno. Uno contendrá una página web, utilizaré el ya creado en las practicas anteriores. Otro con otra página web y uno que hará de balanceo de carga. Además, los tres servidores debrán estar en la misma red.
 
 - Servdior segunda pagina
 
@@ -71,3 +71,33 @@ Para realizar la practica, necesaitré usar tres servidores con nginx instalado 
 ![](Imagenes/bal.png)
 
 ## Configuracion del servidor de balanceo
+
+Para empezar debemos borrar el archivo de configuración predeterminado del sitio virtual por defecto y crear un fichero en la ruta de la imagen.
+
+![](Imagenes/fichero.png)
+
+- Añadir las siguientes lineas al fichero creado:
+
+1. Upstream backend: nos permite añadir los servidores de las paginas webs mediante la ip de la red interna por la que se comunican. Además, establecemos el modo de balanceo que vamos a utilizar. Yo he escogido "IP_HASH" El cual nos permite la persistencia de la sesión.
+
+2. Server: indicaremos la ip del servidor de balanceo y su configuracion.
+
+![](Imagenes/balanceo.png)
+
+- Comprobación
+
+1. Para probar si la configuración del fichero está bien implementada se hace con el siguiente comando:
+
+``nginx -t``
+
+Si la configuración está correcta deberá aparecer estos mensajes:
+
+![](Imagenes/comp.png)
+
+2. Reiniciamos el servicio de NGINX
+
+3. En un buscador escirbimos la ip del adaptador puente del balanceo de carga, nos debe salir nuestra primera pagina web y tras esperar unos segundos y refrescar la agina nos saldrá la segunda.
+
+![](Imagenes/bal1.png)
+
+![](Imagenes/bal2.png)
