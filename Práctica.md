@@ -37,3 +37,17 @@ Este es el resultado despues de modificar la página por defecto:
 ![](Imagenes/cat.png)
 
 ![](Imagenes/mipagina.png)
+
+## Balanceo de carga
+
+El balanceo de carga es una técnica que se utiliza para distribuir las solicitudes entrantes al grupo de servidores del backend. De esta manera, permite agregar muchos servidores cuando aumenta el tráfico.
+
+Para realizar la practica, necesaitré usar tres servidores con nginx instalado en cada uno. Uno contendrá una página web, utilizaré el ya creado en las practicas anteriores. Otro con otra página web y uno que hará de balanceo de carga. Además, los tres servidores se counicarán por una red interna.
+
+- Servdior segunda pagina
+
+![](Imagenes/2pweb)
+
+- Servidor balanceo de carga
+
+![](Imagenes/carga)
