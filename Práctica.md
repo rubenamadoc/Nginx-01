@@ -46,8 +46,28 @@ Para realizar la practica, necesaitré usar tres servidores con nginx instalado 
 
 - Servdior segunda pagina
 
-![](Imagenes/2pweb)
+![](Imagenes/2pweb.png)
 
 - Servidor balanceo de carga
 
-![](Imagenes/carga)
+![](Imagenes/carga.png)
+
+1. Segunda pagina
+
+- Instalamos NGINX en el servidor:
+
+![](Imagenes/2p.png)
+
+- Configuramos la pagina web por defecto:
+
+![](Imagenes/2pconf.png)
+
+![](Imagenes/2pnav.png)
+
+2. Balanceo de carga:
+
+- Instalamos NGINX en el servidor:
+
+![](Imagenes/bal.png)
+
+## Configuracion del servidor de balanceo
